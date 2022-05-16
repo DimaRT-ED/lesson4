@@ -5,7 +5,7 @@ env:
  PACK_NAME: "App_version-$({ github.sha })"
 
 on:
- pull_request:
+ push:
   branches: 
    - master
    
