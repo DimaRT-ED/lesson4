@@ -5,9 +5,10 @@ env:
  PACK_NAME: "App_version-$({ github.sha })"
 
 on:
- push:
-  branches:
-   - mater
+ pull_request:
+  branches: 
+   - master
+   
 jobs:
  first_job_name:
   runs-on: ubuntu-latest
