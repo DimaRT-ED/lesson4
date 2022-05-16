@@ -29,11 +29,11 @@ jobs:
   - name: Run ls -la 
     run : ls -la
 
-  - name: Clone code
-    uses: actions/checkout@1   # build in git script
+#  - name: Clone code
+#    uses: actions/checkout@1   # build in git script
 
-  - name: Run ls -la 
-    run : ls -la
+#  - name: Run ls -la 
+#    run : ls -la
 
  second_job_name:
   runs-on: ubuntu-latest
