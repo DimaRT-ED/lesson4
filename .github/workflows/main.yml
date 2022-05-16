@@ -1,8 +1,8 @@
 name: Symple_action
 
-env:
- APP_NAME: "MyApp"
- PACK_NAME: "App_version-$({ github.sha })"
+#env:
+# APP_NAME: "MyApp"
+# PACK_NAME: "App_version-$({ github.sha })"
 
 on:
  push:
@@ -20,11 +20,11 @@ jobs:
   - name: Print G_B message
     run : echo "GoodBuy FROM FIRST_JOB_NAME"
     
-  - name: Multi commands step
-    run : |
-        echo "APP Name : $({ env.APP_NAME })"
-        echo " $({ env.PACK_NAME })"
-        echo "GoodBuy FROM FIRST_JOB_NAME"
+#  - name: Multi commands step
+#    run : |
+ #       echo "APP Name : $({ env.APP_NAME })"
+#        echo " $({ env.PACK_NAME })"
+#        echo "GoodBuy FROM FIRST_JOB_NAME"
 
   - name: Run ls -la 
     run : ls -la
