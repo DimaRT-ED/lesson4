@@ -1,0 +1,49 @@
+name: Symple_action
+
+env:
+  APP_NAME: "MyApp"
+  PACK_NAME: "App_version-$({ github.sha })"
+
+on:
+	push:
+		branches:
+		    -  mater
+jobs:
+	first_job_name:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Print H_W message
+      run : echo "HELLO FROM FIRST_JOB_NAME"
+
+    - name: Print G_B message
+      run : echo "GoodBuy FROM FIRST_JOB_NAME"
+    
+    - name: Multi commands step
+      run : |
+        echo "APP Name : $({ env.APP_NAME })"
+        echo " $({ env.PACK_NAME })"
+        echo "GoodBuy FROM FIRST_JOB_NAME"
+
+    - name: Run ls -la 
+      run : ls -la
+
+    - name: Clone code
+      uses: actions/checkout@1   # build in git script
+
+    - name: Run ls -la 
+      run : ls -la
+
+  second_job_name:
+    runs-on: ubuntu-latest
+    needs  : [first_job_name]
+
+
+    steps:
+    - name: Print second message
+      run : echo "MSG FROM FSECOND_JOB_NAME"
+
+    - name: Check installed packs
+      run : |
+        python --version
+        zip --version
